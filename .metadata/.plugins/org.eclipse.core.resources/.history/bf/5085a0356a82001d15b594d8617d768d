@@ -1,0 +1,58 @@
+package matriz;
+
+import java.util.Scanner;
+
+public class program {
+
+	public static void main(String[] args) {
+		Scanner imput = new Scanner(System.in);
+		System.out.println("Enter the number of Colums");
+		int n= imput.nextInt();
+		System.out.println("Enter the number of Lines");
+		int m= imput.nextInt();
+
+		int matriz[][] = new int[n][m];
+		
+		for (int i =0;i<=m;i++) {
+			for (int b =0;b<=n;b++) {
+				System.out.printf("[%d][%d]",i,m);
+				matriz[i][b]=imput.nextInt();
+			}
+		}
+		
+		for (int i =0;i<=m;i++) {
+			for (int b =0;b<=n;b++) {
+				System.out.println(matriz[i][b]+"--");
+			}
+		}
+
+		System.out.println("which number should be checked?");
+		int numb = imput.nextInt();
+		for (int i =0;i<=m;i++) {
+			for (int b =0;b<=n;b++) {
+				if(matriz[m][n]==numb) {
+					
+					System.out.println("Position = "+m+","+n);
+					if(i>0) {
+						m-=m;
+						System.out.println("Top = "+matriz[m][n]);
+					}
+					if(b>0) {
+						m-=m;
+						System.out.println("Left = "+matriz[m][n]);
+					}
+					if(b<n) {
+						m+=m;
+						System.out.println("Right = "+matriz[m][n]);
+					}
+					if(i<n) {
+						m+=m;
+						System.out.println("Down = "+matriz[m][n]);
+					}
+				}
+			}
+		}
+		imput.close();
+	}
+
+}

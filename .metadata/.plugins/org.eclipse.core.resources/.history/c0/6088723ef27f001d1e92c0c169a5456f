@@ -1,0 +1,27 @@
+package list;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class program {
+	public static void main(String[]args) {
+		employees b = new employees(772,"Bob Green",5000.00);
+		employees m = new employees(333," Maria Brown", 4000.00);
+		employees a = new employees(536,"Alex Grey",3000.00);
+		List<employees> employ = new ArrayList<>();
+		employ.add(b);
+		employ.add(m);
+		employ.add(a);
+		//program
+		
+		System.out.println("How many employees will be registred? "+employ.size());
+	
+		for(int i=0; i < employ.size();i++) {
+			System.out.println(employ.get(0).getClass());
+			
+		}
+
+	}
+	
+	
+}
